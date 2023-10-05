@@ -358,9 +358,9 @@ class BaseRelaxationData(_BlockData):
         if self.relaxation_side == RelaxationSide.BOTH:
             relational_operator_string = '=='
         elif self.relaxation_side == RelaxationSide.UNDER:
-            relational_operator_string = '>='
-        elif self.relaxation_side == RelaxationSide.OVER:
             relational_operator_string = '<='
+        elif self.relaxation_side == RelaxationSide.OVER:
+            relational_operator_string = '>='
         else:
             raise ValueError('Unexpected relaxation side')
         return f'Relaxation for {self.get_aux_var().name} {relational_operator_string} {str(self.get_rhs_expr())}'
